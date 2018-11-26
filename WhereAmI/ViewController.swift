@@ -20,6 +20,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate  {
             //locationManager.requestAlwaysAuthorization()
         }
         
+//        locationManager.pausesLocationUpdatesAutomatically = true
         locationManager.startUpdatingLocation()
 //        locationManager.startMonitoringSignificantLocationChanges()
     }
