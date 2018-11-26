@@ -21,7 +21,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate  {
         }
         
         locationManager.startUpdatingLocation()
-        locationManager.startMonitoringSignificantLocationChanges()
+//        locationManager.startMonitoringSignificantLocationChanges()
     }
     
     @IBOutlet weak var locTextField: UITextField!
@@ -70,10 +70,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate  {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-
+        
         print(locations[0].altitude)
         
-                CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: {(placemarks, error)->Void in
+        CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: {(placemarks, error)->Void in
             
             if (error != nil) {
                 print("Reverse geocoder failed with error" + error!.localizedDescription)
@@ -94,8 +94,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate  {
         //stop updating location to save battery life
         locationManager.stopUpdatingLocation()
         
-
-               if let containsPlacemark = placemark {
+        
+        if let containsPlacemark = placemark {
             
             
             let locality = (containsPlacemark.locality != nil) ? containsPlacemark.locality : ""
